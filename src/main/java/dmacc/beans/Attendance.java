@@ -19,6 +19,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 @Embeddable
 public class Attendance {
 	@Autowired 
+	//TODO add employee name and ID num from employee table
 	private char attendance;  // Char will be either (y)es or (n)o. Yes also encompassed any type of excused absence. 
 	
 

@@ -24,9 +24,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 @NoArgsConstructor
 @Embeddable
 public class Attendance {
+
 	private LocalDate date;
 	private LocalTime clockIn;
 	private LocalTime clockOut;
-	
-
 }

@@ -1,0 +1,30 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Login</title>
+<script type="text/javascript">
+    function validate(form) {
+ //make sure only alphanumeric
+
+    	return true;
+        
+    }
+    //figure out login next week
+</script>
+</head>
+<body>
+	<form th:object="${newLogin}"
+		th:action="@{/update/{id}(id=${newLogin.id})}" method=POST>
+		Username: <input name="username" size="20" th:field="*{username}"><br />
+
+		Password: <input name="password" size="20" th:field="*{password}"><br />
+		
+		<input name="Submit" type="submit" value="submit" />
+	</form>
+	
+	<!-- use these until i figure out the database stuff -->
+	<a href="../managerView">Manager</a>
+	<a href="../employeeView">Employee</a>
+	
+</body>
+</html>

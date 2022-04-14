@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<style>
+	h1 {
+		padding: 20px;
+		margin: 20px;
+	}
+	form {
+		padding: 5px;
+		margin: 20px;
+	}
+	a {
+		padding: 20px;
+		margin: 20px;
+	}
+</style>
+
+<title>Add/Edit New Safety Record</title>
+</head>
+<body>
+	<h1>Add/Edit New Safety Record</h1>
+	<hr>
+	<form th:object="${newRecord}" th:action="@{/updateSafety/{id}(id=${newRecord.id})}" method='POST'>
+	<div class="form-group">
+		<label for="employeeId">Employee ID</label>
+		<input type="text" id="employeeId" class="form-control" name="employeeId" size="20" th:field="*{employeeId}" ><br/>
+		<label for="incidents">Incidents</label>
+		<input type="number" id="incidents" class="form-control" name="incidents" size="20" th:field="*{incidents}"><br/>
+		<label for="notes">Notes</label>
+		<input type="text" id="notes" class="form-control" name="notes" size="20" th:field="*{notes}"><br/>
+		<input name="submit" type="submit" value="submit" />
+	</div>
+	</form>
+	<a href="manageAllSafety">View Safety Records</a>
+</body>
+</html>

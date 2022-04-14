@@ -5,9 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 /**
  * @author Owen Miner - osminer
@@ -17,19 +15,19 @@ import lombok.Setter;
 @Data
 @NoArgsConstructor
 @Entity
-public class Productivity {
+public class Safety {
 	@Id
 	@GeneratedValue
 	private long id;
 	private String employeeId;
-	private int contribution; //Numeral score for productivity output for the amount of hours an employee has worked
-	private int hours; //Amount of hours contributed during bonus timeline
+	private int incidents; //Count for amount of saftey incidents for each employee
+	private String notes; //gives managers the ability to make comments on saftey incidents
 	
-	public Productivity(long id, String empId, int cont, int hours) {
+	public Safety(long id, String empId, int incidents, String notes) {
 		super();
 		this.id = id;
 		this.employeeId = empId;
-		this.contribution = cont;
-		this.hours = hours;
+		this.incidents = incidents;
+		this.notes = notes;
 	}
 }

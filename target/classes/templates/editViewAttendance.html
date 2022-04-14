@@ -11,7 +11,7 @@
 	}
 </style>
 
-<title>View Attendance</title>
+<title>Employee Attendance</title>
 </head>
 <body>
 <h1>Attendance Records:</h1>
@@ -24,6 +24,8 @@
 				<td>Date</td>
 				<td>Time In</td>
 				<td>Time Out</td>
+				<td></td>
+				<td></td>
 			</tr>
 			<tr th:each="currentRecord : ${records}" >
 				<td th:text="${currentRecord.id}" />
@@ -31,10 +33,13 @@
 				<td th:text="${currentRecord.date}" />
 				<td th:text="${currentRecord.timeIn}" />
 				<td th:text="${currentRecord.timeOut}" />
+				<td><a th:href="@{/editAttendance/{id}(id=${currentRecord.id})}">Edit</a></td>
+				<td><a th:href="@{/deleteAttendance/{id}(id=${currentRecord.id})}">Delete</a></td>
 			</tr>
 		</table>
 	</form>
 	<hr><br/>
-	<a href="/employeeView">Back</a>
+	<a href="/inputAttendance">Add Attendance Record</a><br/><br/>
+	<a href="/managerView">Back</a>
 </body>
 </html>

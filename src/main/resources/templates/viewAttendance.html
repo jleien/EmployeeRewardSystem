@@ -18,6 +18,13 @@
 <hr>
 	<form>
 		<table class="table table-striped">
+			<tr style="font-weight: bold">
+				<td>ID</td>
+				<td>Employee ID</td>
+				<td>Date</td>
+				<td>Time In</td>
+				<td>Time Out</td>
+			</tr>
 			<tr th:each="currentRecord : ${records}" >
 				<td th:text="${currentRecord.id}" />
 				<td th:text="${currentRecord.employeeId}" />
@@ -27,5 +34,7 @@
 			</tr>
 		</table>
 	</form>
+	<hr><br/>
+	<a href="/employeeView">Back</a>
 </body>
 </html>

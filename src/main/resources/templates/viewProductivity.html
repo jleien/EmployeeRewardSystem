@@ -11,26 +11,24 @@
 	}
 </style>
 
-<title>View Attendance</title>
+<title>View Productivity</title>
 </head>
 <body>
-<h1>Attendance Records:</h1>
+<h1>Productivity Records:</h1>
 <hr>
 	<form>
 		<table class="table table-striped">
 			<tr style="font-weight: bold">
 				<td>ID</td>
 				<td>Employee ID</td>
-				<td>Date</td>
-				<td>Time In</td>
-				<td>Time Out</td>
+				<td>Contribution</td>
+				<td>Hours</td>
 			</tr>
 			<tr th:each="currentRecord : ${records}" >
 				<td th:text="${currentRecord.id}" />
 				<td th:text="${currentRecord.employeeId}" />
-				<td th:text="${currentRecord.date}" />
-				<td th:text="${currentRecord.timeIn}" />
-				<td th:text="${currentRecord.timeOut}" />
+				<td th:text="${currentRecord.contribution}" />
+				<td th:text="${currentRecord.hours}" />
 			</tr>
 		</table>
 	</form>

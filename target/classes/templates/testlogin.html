@@ -1,0 +1,18 @@
+<html xmlns:th= "http://www.thymeleaf.org" >
+<head>
+<meta charset="UTF-8">
+<title>Login Test</title>
+</head>
+<body>
+	<form>
+		<table>
+			<tr th:each="currentLogin : ${login}">
+				<td th:text="${currentLogin.id}" />
+				<td th:text="${currentLogin.username}" />
+				<td th:text="${currentLogin.password}" />
+			</tr>
+		</table>
+	</form>
+	<a href="../inputLogin">login</a>
+</body>
+</html>

@@ -5,10 +5,7 @@
 **/
 package dmacc.loggingin;
 
-import java.sql.Statement;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -40,9 +37,9 @@ public class LoginController {
 
 	@PostMapping("/inputLogin")
 	public String addNewLogin(@ModelAttribute Login l, Model model) {
-		// needs to contain logic for checking database for correct login
-		// receive object from html and check against database
-		// return case statement based on login to redirect to correct site view
+		String username = l.getUsername();
+		String password = l.getPassword();
+		findLoginByUsernameAndPassword(username, password);
 		int role = 0;
 		
 		if (l.getUsername().equals("employee")) {
@@ -50,12 +47,6 @@ public class LoginController {
 			}
 			else if (l.getUsername().equals("manager")) {
 				role = 2;
-			}
-			else if (l.getUsername().equals("finmanager")) {
-				role = 3;
-			}
-			else if (l.getUsername().equals("HR")) {
-				role = 4;
 			}
 			else {
 				role = 0;
@@ -68,12 +59,6 @@ public class LoginController {
 			break;
 		case 2:
 			// send to manager
-			break;
-		case 3:
-			// send to finance
-			break;
-		case 4:
-			// send to hr
 			break;
 		}
 		return null;

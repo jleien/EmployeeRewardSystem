@@ -11,30 +11,33 @@
 	}
 </style>
 
-<title>View Attendance</title>
+<title>Employee Safety</title>
 </head>
 <body>
-<h1>Attendance Records:</h1>
+<h1>Safety Records:</h1>
 <hr>
 	<form>
 		<table class="table table-striped">
 			<tr style="font-weight: bold">
 				<td>ID</td>
 				<td>Employee ID</td>
-				<td>Date</td>
-				<td>Time In</td>
-				<td>Time Out</td>
+				<td>Incidents</td>
+				<td>Notes</td>
+				<td></td>
+				<td></td>
 			</tr>
 			<tr th:each="currentRecord : ${records}" >
 				<td th:text="${currentRecord.id}" />
 				<td th:text="${currentRecord.employeeId}" />
-				<td th:text="${currentRecord.date}" />
-				<td th:text="${currentRecord.timeIn}" />
-				<td th:text="${currentRecord.timeOut}" />
+				<td th:text="${currentRecord.incidents}" />
+				<td th:text="${currentRecord.notes}" />
+				<td><a th:href="@{/editSafety/{id}(id=${currentRecord.id})}">Edit</a></td>
+				<td><a th:href="@{/deleteSafety/{id}(id=${currentRecord.id})}">Delete</a></td>
 			</tr>
 		</table>
 	</form>
 	<hr><br/>
-	<a href="/employeeView">Back</a>
+	<a href="/inputSafety">Add Safety Record</a><br/><br/>
+	<a href="/managerView">Back</a>
 </body>
 </html>

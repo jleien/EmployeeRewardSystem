@@ -8,6 +8,8 @@ import java.time.LocalTime;
 
 import javax.persistence.*;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 /**
  * @author rossk - rkromminga
  * CIS175 - Spring 2022
@@ -19,9 +21,10 @@ public class AttendanceRecord {
 	@GeneratedValue
 	private long id;
 	private int employeeId;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate date;
-	private LocalTime timeIn;
-	private LocalTime timeOut;
+	private String timeIn;
+	private String timeOut;
 	
 	public AttendanceRecord() {
 		super();
@@ -35,14 +38,14 @@ public class AttendanceRecord {
 		this.employeeId = employeeId;
 		this.date = date;
 	}
-	public AttendanceRecord(int employeeId, LocalDate date, LocalTime timeIn, LocalTime timeOut) {
+	public AttendanceRecord(int employeeId, LocalDate date, String timeIn, String timeOut) {
 		super();
 		this.employeeId = employeeId;
 		this.date = date;
 		this.timeIn = timeIn;
 		this.timeOut = timeOut;
 	}
-	public AttendanceRecord(long id, int employeeId, LocalDate date, LocalTime timeIn, LocalTime timeOut) {
+	public AttendanceRecord(long id, int employeeId, LocalDate date, String timeIn, String timeOut) {
 		super();
 		this.id = id;
 		this.employeeId = employeeId;
@@ -59,10 +62,10 @@ public class AttendanceRecord {
 	public LocalDate getDate() {
 		return date;
 	}
-	public LocalTime getTimeIn() {
+	public String getTimeIn() {
 		return timeIn;
 	}
-	public LocalTime getTimeOut() {
+	public String getTimeOut() {
 		return timeOut;
 	}
 	public void setId(long id) {
@@ -74,10 +77,10 @@ public class AttendanceRecord {
 	public void setDate(LocalDate date) {
 		this.date = date;
 	}
-	public void setTimeIn(LocalTime timeIn) {
+	public void setTimeIn(String timeIn) {
 		this.timeIn = timeIn;
 	}
-	public void setTimeOut(LocalTime timeOut) {
+	public void setTimeOut(String timeOut) {
 		this.timeOut = timeOut;
 	}
 	

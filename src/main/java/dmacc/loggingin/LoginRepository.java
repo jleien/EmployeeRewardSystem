@@ -9,14 +9,13 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 /**
  * @author jake
  *
  */
 public interface LoginRepository extends JpaRepository<Login, Long>{
-	@Query(value = "Select * from login", nativeQuery=true)
-	private List<Object> getValues() {
-		return null;
-	}
+	@Query(value = "Select * from login a where a.username = :username and a.password = :password", nativeQuery = true)
+	List<Login> findLoginByUsernameAndPassword(String username, String password);
 }

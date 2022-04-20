@@ -22,10 +22,10 @@ public class UserLogin {
 		super();
 	}
 	
-	public UserLogin(long id, String user, String pass) {
+	public UserLogin(long id, String username, String password) {
 		this.id = id;
-		this.username = user;
-		this.password = pass;
+		this.username = username;
+		this.password = password;
 	}
 
 	public long getId() {
@@ -50,6 +50,12 @@ public class UserLogin {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	@Override
+	public String toString() {
+		return "UserLogin [id=" + id + ", " + (username != null ? "username=" + username + ", " : "")
+				+ (password != null ? "password=" + password : "") + "]";
 	}
 
 }

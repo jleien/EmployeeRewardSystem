@@ -18,7 +18,7 @@
 <hr>
 	<div class="row">
 	<div class="col-4">
-	<form th:action="@{/loginUser}" th:object="${UserLogin}">
+	<form th:object="${UserLogin}" th:action="@{/loginUser)}" method=POST >
 	  <div class="form-group-sm">
 	    <label for="username">Username</label>
 		<input id="username" class="form-control" name="username" size="20" th:value="*{username}" ><br/>

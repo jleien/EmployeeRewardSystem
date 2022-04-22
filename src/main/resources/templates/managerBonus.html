@@ -7,5 +7,24 @@
 <body>
 	<h1> Bonus Review Report</h1>
 	
+	<form>
+		<table>
+			<td>ID</td>
+			<td>Employee ID</td>
+			<td>Bonus Eligible</td>
+			<td>Amount</td>
+			
+			<tr th:each="currentRecord : ${records}"> <!-- For each employee -->
+				<td th:text= "${currentRecord.id}"/>
+				<td th:text= "${currentRecord.employeeId}"/>
+				<td th:text= "${currentRecord.eligible}"/> <!-- Yes/No -->
+				<td th:text= "${currentRecord.amount}"/> <!-- Bonus Amount -->
+			</tr>
+		</table>
+	<a href="/managerView">Manager Page</a>
+	
+	</form>
+	
+	
 </body>
 </html>

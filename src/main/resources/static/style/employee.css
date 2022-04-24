@@ -1,0 +1,78 @@
+/*employee.css*/
+body,
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+}
+
+.container,
+.container-fluid {
+    margin: 0%;
+    padding: 0%;
+}
+
+div a:link {
+    font-size: 30px;
+}
+
+/* header */
+
+header {
+    background: lightcyan;
+    margin-top: -20px;
+}
+
+footer {
+    min-height: 50px;
+    background: papayawhip;
+}
+
+.manu_header {
+    
+    color: #7b2800;
+    font-size: 3em;
+    font-weight: bolder;
+}
+
+/* hero image*/
+
+#hero-image {
+    /*background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))url(./images/classical_coffee_shop_logos_vector_set_586990.jpg);*/
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    margin-top: 0px;
+}
+
+/*navbar */
+
+ul li {
+    display: inline;
+    padding: 8px;
+    background-color: transparent;
+}
+
+ul li a {
+    color: rgb(238, 163, 34)
+}
+
+
+/* under_construction*/
+.main {
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+ .blank {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0px);
+}
+
+footer {
+    margin-top: auto;
+}

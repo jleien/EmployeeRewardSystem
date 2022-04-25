@@ -17,7 +17,7 @@
 <h1> Bonus Eligibility: </h1>
 <hr>
 	
-		<form th:action="@{/enterBonus}">
+		<form th:action="@{/enterBonusEmployee}">
 	  	<div class="form-group-sm">
 	    	<label for="employeeNumber">Employee Number</label>
 			<input id="employeeNumber" class="form-control" name="employeeNumber" size="20" th:value="*{employeeNumber}" ><br/>
@@ -30,6 +30,6 @@
 	<h6 th:text="${bonusMessage}"></h6>
 	<h6 th:text="${bonusAmount}"></h6>
 	<br />
-	<a href="/managerView">Back</a>
+	<a href="/employeeView">Back</a>
 </body>
 </html>

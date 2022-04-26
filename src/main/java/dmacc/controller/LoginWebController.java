@@ -40,7 +40,7 @@ public class LoginWebController {
 	}
 	
 	@GetMapping("/loginUser")
-	public String showUpdateVehicle(@RequestParam(name = "username") String username, @RequestParam(name = "password") String password, Model model) {
+	public String loginUser(@RequestParam(name = "username") String username, @RequestParam(name = "password") String password, Model model) {
 		if (username.equals("employee") && password.equals("password")) {
 			return "employee";
 		}else if (username.equals("manager") && password.equals("password")) {
@@ -48,31 +48,6 @@ public class LoginWebController {
 		}
 		
 		return loginPage(model);
-	}
-	
-	@PostMapping("/loginUser")
-	public String addNewLogin(@ModelAttribute UserLogin l, Model model) {
-		System.out.println("success");
-		//assigning user input to variables
-		String username = l.getUsername();
-		String password = l.getPassword();
-		
-		//passing the user inputted username and password into the query, which then checks the database for a match.
-		//try {
-		UserLogin loginFoundAccount = loginRepo.findLoginByUsernameAndPassword(username, password);
-		System.out.println(loginFoundAccount.toString());
-		//}catch(NotFoundExceptionOrSomething)
-		
-		if (l.getUsername().equals("employee")) {
-			return "employee";
-			}
-			else if (l.getUsername().equals("manager")) {
-				return "manager";
-			}
-			else {
-				System.out.println("Invalid Login");
-				return "login";
-			}
 	}
 
 }

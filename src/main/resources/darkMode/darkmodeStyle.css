@@ -1,0 +1,13 @@
+body.darkTheme{
+		background-color: RGB(33, 35, 38);
+		color: white;
+	}
+	.button{
+		line-height: 0; 
+		height:25px; 
+		width:150px; 
+		padding-top: 1px;
+		padding-bottom: 1px; 
+		padding-right: 1px; 
+		padding-left: 1px
+	}

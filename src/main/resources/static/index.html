@@ -12,11 +12,12 @@
 
 <!--employee.css-->
     <link  href="style/employee.css" rel="stylesheet"/>
-
+<!-- Dark Mode Theme -->
+	<link rel="stylesheet" href="../darkMode/darkmodeStyle.css">
     <title>Home</title>
 </head>
 
-<body>
+<body onload = getTheme()>
 <div class="container-fluid ">
         <div class="row">
             <header class="flex-container navbar" style="height: 9%; justify-content: center; margin-bottom: 0px;" ;>
@@ -42,6 +43,10 @@
         <div class="row">
         <img src="images/happy-factory-workers.jpg" alt="obviously posed stock photo of happy worker"> </div>
 </div>
-<footer> <a href='https://www.freepik.com/photos/machine-operator'>Machine operator photo created by aleksandarlittlewolf - www.freepik.com</a></footer>
+<footer> <a href='https://www.freepik.com/photos/machine-operator'>Machine operator photo created by aleksandarlittlewolf - www.freepik.com</a>
+<button onclick = "darkMode()" id = "theme" class= "button">Dark Mode Theme</button>
+</footer>
 </body>
+<!-- Dark Mode Theme -->
+<script src="../darkMode/darkmode.js"></script>
 </html>        

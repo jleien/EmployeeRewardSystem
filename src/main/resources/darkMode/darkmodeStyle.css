@@ -9,5 +9,10 @@ body.darkTheme{
 		padding-top: 1px;
 		padding-bottom: 1px; 
 		padding-right: 1px; 
-		padding-left: 1px
+		padding-left: 1px;
+		border-color: rgb(118,118,118);
+		border-style: outset;
+		text-align: center;
+		border-radius: 3px;
+		margin-top: 20px;
 	}
